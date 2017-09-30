@@ -4,6 +4,7 @@ var $ = {
 
     /** No SWF Object Multiple File Upload (using AJAX only)
      * @version         1.1.2
+     * @copyright       (c) 2018 All Rights Reserved. Oparand Ltd. Nigeria
      * @compatibility   Chrome 1, FireFox 3+, Internet Explorer 5+, Opera 8+, Safari 3+
      * @original-author Andrea Giammarchi
      * @current-author 	Ifeora Okechukwu
