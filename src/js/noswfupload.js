@@ -2,12 +2,12 @@
 
 var $ = {
 
-    /** No SWF Object Multiple File Upload
+    /** No SWF Object Multiple File Upload (using AJAX only)
      * @version         1.1.2
      * @compatibility   Chrome 1, FireFox 3+, Internet Explorer 5+, Opera 8+, Safari 3+
      * @original-author Andrea Giammarchi
      * @current-author 	Ifeora Okechukwu
-     * @project-owner 	https://www.articon.com.ng/
+     * @project-owner 	https://www.oparand.co/
      * @original-repo 	https://code.google.com/p/noswfupload
      * @current-repo    https://www.github.com/synergixe/noswfupload
      * @blog            webreflection.blogspot.com
