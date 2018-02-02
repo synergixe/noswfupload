@@ -312,6 +312,7 @@ var $ = {
                 if(handler.file.getAsBinary){
                     var boundary = "AjaxUploadBoundary" + (new Date).getTime();
                     xhr.setRequestHeader("Content-Type", "multipart/form-data; boundary=" + boundary);
+			xhr.setRequestHeader(handler.csrfHeader.name, handler.csrfHeader.value);
                     xhr.setRequestHeader("X-Name", handler.name);
                     xhr[xhr.sendAsBinary ? "sendAsBinary" : "send"](multipart(boundary, handler.name, handler.file));
                 } else if(typeof FormData === 'function'){
@@ -324,7 +325,7 @@ var $ = {
                      if(typeof window.opera == "object"){  
                           xhr.setRequestHeader("Content-Type", "multipart/form-data; charset=utf-8; boundary=" + boundary);
                      }
-                  
+                    xhr.setRequestHeader(handler.csrfHeader.name, handler.csrfHeader.value);
                     xhr.setRequestHeader("X-Name", handler.name);
                     xhr.setRequestHeader("X-Filename", handler.file.fileName || handler.file.name);
                     
@@ -333,6 +334,7 @@ var $ = {
                 } else {
 
                     xhr.setRequestHeader("Content-Type", "multipart/form-data; boundary=" + boundary);
+		    xhr.setRequestHeader(handler.csrfHeader.name, handler.csrfHeader.value);
                     xhr.setRequestHeader("X-Name", handler.name);
                     xhr.setRequestHeader("X-Filename", handler.file.fileName || handler.file.name);
                     if(typeof FileReader === 'function'){
@@ -582,6 +584,11 @@ var $ = {
                                     // maxSize is the maximum amount of bytes for each file
             maxSize:maxSize ? maxSize >> 0 : -1,
             files:[],               // file list
+		// Setting up CSRF Header for AJAX Transport
+	    csrfHeader:{
+		    name:"X-CSRF-Token",
+		    value:"xxxxxxxxxxxxxxxxxxxxxxxxxxx"
+	    },
             
             // remove every file from the noswfupload component
             clean:function(){
